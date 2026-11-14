@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#4d0a37" />
+      <stop offset="55%" stop-color="#19051a" />
+      <stop offset="100%" stop-color="#030712" />
+    </radialGradient>
+    <linearGradient id="bead" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd6ea" />
+      <stop offset="50%" stop-color="#ff1f7a" />
+      <stop offset="100%" stop-color="#9d174d" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#ff1f7a" stroke-width="5" stroke-opacity="0.4" />
+  <g fill="url(#bead)">
+    <circle cx="256" cy="106" r="22" />
+    <circle cx="341" cy="132" r="20" />
+    <circle cx="398" cy="202" r="20" />
+    <circle cx="406" cy="286" r="20" />
+    <circle cx="359" cy="358" r="20" />
+    <circle cx="282" cy="398" r="20" />
+    <circle cx="198" cy="390" r="20" />
+    <circle cx="130" cy="342" r="20" />
+    <circle cx="106" cy="256" r="20" />
+    <circle cx="132" cy="171" r="20" />
+    <circle cx="190" cy="118" r="20" />
+  </g>
+  <path d="M 270 198 A 62 62 0 1 0 270 314 A 50 50 0 1 1 270 198 Z" fill="#ffd6ea" />
+  <polygon points="282,240 288,252 301,253 291,262 294,274 282,267 270,274 273,262 263,253 276,252" fill="#ffd6ea" />
+</svg>

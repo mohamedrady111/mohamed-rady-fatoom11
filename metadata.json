@@ -1,0 +1,6 @@
+{
+  "name": "من محمد راضي لـ فطوم — السبحة الكونية",
+  "description": "السبحة الإلكترونية الأسطورية لـ فطوم مع فضاء ثلاثي الأبعاد يضم سدماً ومجرات وثقباً أسود ونظام ألوان نيون وقوز قزح RGB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

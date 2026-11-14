@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>من محمد راضي لـ فطوم</title>
+    <meta
+      name="description"
+      content="السبحة الإلكترونية الأسطورية للموبايل وأندرويد مع خلفية فضاء عميق ثلاثية الأبعاد تضم سدماً ومجرات وثقباً أسود، اهتزاز Haptic Feedback، مانع إغلاق الشاشة، ومؤثرات نيون وقوز قزح RGB."
+    />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="من محمد راضي لـ فطوم | السبحة الكونية الأسطورية" />
+    <meta
+      property="og:description"
+      content="السبحة الإلكترونية الأسطورية مع سدم ومجرات وثقب أسود ثلاثي الأبعاد ونظام ألوان نيون وقوز قزح RGB."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Android & iOS PWA / WebAPK Meta -->
+    <meta name="theme-color" content="#030712" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="السبحة" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <!-- Google Fonts - Cairo & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        background: #030712;
+      }
+      #splash {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 50% 30%, #4d0a37 0%, #1d0618 48%, #030712 88%);
+        font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color: #fff;
+        transition: opacity 0.65s ease, visibility 0.65s ease;
+        opacity: 1;
+      }
+      #splash.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      #splash .logo {
+        width: min(34vw, 130px);
+        height: min(34vw, 130px);
+        filter: drop-shadow(0 0 18px rgba(255, 61, 139, 0.65));
+        animation: sp-pop 0.85s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+      }
+      #splash .ring {
+        transform-origin: 256px 256px;
+        animation: sp-spin 14s linear infinite;
+      }
+      #splash .moon {
+        transform-origin: 256px 256px;
+        animation: sp-pulse 2.4s ease-in-out infinite;
+      }
+      #splash .bead {
+        font-size: 30px;
+        line-height: 1;
+        margin-top: 6px;
+        display: inline-block;
+        transform-origin: 50% 0;
+        animation: sp-sway 2.6s ease-in-out infinite;
+        filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.6));
+      }
+      #splash h1 {
+        margin: 10px 24px 4px;
+        font-size: clamp(20px, 5.4vw, 28px);
+        white-space: nowrap;
+        font-weight: 800;
+        text-align: center;
+        line-height: 1.5;
+        color: #fff;
+        text-shadow: 0 0 14px rgba(255, 61, 139, 0.65), 0 0 34px rgba(255, 61, 139, 0.3);
+        animation: sp-up 0.7s 0.2s ease both;
+      }
+      #splash .ed {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        color: #ff94c2;
+        direction: ltr;
+        text-align: center;
+        animation: sp-up 0.7s 0.35s ease both;
+      }
+      #splash .pill {
+        margin-top: 18px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        border: 1.5px solid rgba(255, 61, 139, 0.75);
+        background: radial-gradient(circle at 50% 50%, rgba(255, 61, 139, 0.22), rgba(255, 61, 139, 0.06));
+        box-shadow: 0 0 22px rgba(255, 61, 139, 0.24), inset 0 0 14px rgba(255, 61, 139, 0.12);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        direction: rtl;
+        animation: sp-up 0.7s 0.5s ease both;
+      }
+      #splash .pill b {
+        font-size: clamp(14px, 4vw, 17px);
+        font-weight: 800;
+        color: #ffb3d6;
+        text-shadow: 0 0 10px rgba(255, 61, 139, 0.85);
+      }
+      #splash .pill span {
+        font-size: 17px;
+        color: #ff85b8;
+        line-height: 1;
+      }
+      #splash .pill em {
+        font-style: normal;
+        font-size: 14px;
+        line-height: 1;
+        margin-inline-end: 4px;
+      }
+      #splash .pill.f {
+        margin-top: 10px;
+        border-color: rgba(244, 114, 182, 0.7);
+      }
+      #splash .pill.f i {
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 700;
+        color: #fbcfe8;
+        margin-inline-start: 4px;
+      }
+      #splash .for {
+        margin: 12px 24px 0;
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #f9a8d4;
+        text-align: center;
+        animation: sp-up 0.7s 0.65s ease both;
+      }
+      #splash .dhikr {
+        margin: 16px 24px 0;
+        font-size: clamp(13px, 3.8vw, 16px);
+        font-weight: 700;
+        color: #cbd5e1;
+        text-align: center;
+        animation: sp-up 0.7s 0.75s ease both;
+      }
+      #splash .load {
+        margin: 8px 24px 0;
+        font-size: 12px;
+        color: #94a3b8;
+        text-align: center;
+        animation: sp-up 0.7s 0.85s ease both, sp-blink 1.5s 1.2s ease-in-out infinite;
+      }
+      #splash small {
+        position: absolute;
+        bottom: 28px;
+        color: #94a3b8;
+        font-size: 13px;
+        animation: sp-up 0.7s 0.9s ease both;
+      }
+      @keyframes sp-sway {
+        0%, 100% { transform: rotate(-12deg); }
+        50% { transform: rotate(12deg); }
+      }
+      @keyframes sp-blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.45; }
+      }
+      @keyframes sp-spin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes sp-pulse {
+        0%, 100% { transform: scale(1); opacity: 0.95; }
+        50% { transform: scale(1.06); opacity: 1; }
+      }
+      @keyframes sp-pop {
+        from { opacity: 0; transform: scale(0.6); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes sp-up {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+      #splash .sh {
+        position: absolute;
+        bottom: -30px;
+        font-style: normal;
+        opacity: 0;
+        animation: sp-heart 6s linear infinite;
+        pointer-events: none;
+      }
+      #splash .sh:nth-of-type(1) { left: 6%; font-size: 18px; animation-delay: 0s; }
+      #splash .sh:nth-of-type(2) { left: 18%; font-size: 26px; animation-delay: 1.2s; animation-duration: 7s; }
+      #splash .sh:nth-of-type(3) { left: 32%; font-size: 15px; animation-delay: 2.4s; }
+      #splash .sh:nth-of-type(4) { left: 46%; font-size: 22px; animation-delay: 0.6s; animation-duration: 6.5s; }
+      #splash .sh:nth-of-type(5) { left: 60%; font-size: 17px; animation-delay: 3s; }
+      #splash .sh:nth-of-type(6) { left: 72%; font-size: 28px; animation-delay: 1.8s; animation-duration: 7.5s; }
+      #splash .sh:nth-of-type(7) { left: 84%; font-size: 16px; animation-delay: 0.3s; }
+      #splash .sh:nth-of-type(8) { left: 93%; font-size: 21px; animation-delay: 2.7s; }
+      @keyframes sp-heart {
+        0% { transform: translateY(0) rotate(-8deg); opacity: 0; }
+        12% { opacity: 0.85; }
+        100% { transform: translateY(-105vh) rotate(14deg); opacity: 0; }
+      }
+    </style>
+  </head>
+  <body class="bg-[#030712] text-slate-100 select-none antialiased overflow-x-hidden">
+    <div id="splash" role="presentation">
+      <i class="sh">💗</i><i class="sh">💘</i><i class="sh">💕</i><i class="sh">🩷</i>
+      <i class="sh">💞</i><i class="sh">💖</i><i class="sh">💗</i><i class="sh">💘</i>
+      <svg class="logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="spPink" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffd6ea" />
+            <stop offset="50%" stop-color="#ff3d8b" />
+            <stop offset="100%" stop-color="#be185d" />
+          </linearGradient>
+        </defs>
+        <circle cx="256" cy="256" r="150" fill="none" stroke="#ff3d8b" stroke-width="4" stroke-opacity="0.35" />
+        <g class="ring" fill="url(#spPink)">
+          <circle cx="256" cy="106" r="22" /><circle cx="341" cy="132" r="20" /><circle cx="398" cy="202" r="20" />
+          <circle cx="406" cy="286" r="20" /><circle cx="359" cy="358" r="20" /><circle cx="282" cy="398" r="20" />
+          <circle cx="198" cy="390" r="20" /><circle cx="130" cy="342" r="20" /><circle cx="106" cy="256" r="20" />
+          <circle cx="132" cy="171" r="20" /><circle cx="190" cy="118" r="20" />
+        </g>
+        <g class="moon" fill="#ffd6ea">
+          <path d="M 270 200 A 60 60 0 1 0 270 312 A 48 48 0 1 1 270 200 Z" />
+          <polygon points="280,240 286,252 299,253 289,262 292,274 280,267 268,274 271,262 261,253 274,252" />
+        </g>
+      </svg>
+      <span class="bead">📿</span>
+      <h1>السبحة الإلكترونية الأسطورية</h1>
+      <p class="ed">MOHAMED &amp; FATOUM 💘</p>
+      <div class="pill"><span>۝</span><b>« ﴿مُـحَـمَّـد رَاضِـي﴾ »</b><span>۝</span><em>🦊✨</em></div>
+      <div class="pill f"><span>۝</span><b>« ﴿فُـطُـوم﴾ »</b><span>۝</span><em>🦦💗</em><i>فَاطِمَة عَلَاء</i></div>
+      <p class="for">مني مُحَمَّد رَاضِي لـ فطوم 💗</p>
+      <p class="dhikr">سبحان الله وبحمده، سبحان الله العظيم</p>
+      <p class="load">جاري تهيئة الفضاء الكوني والذكر...</p>
+      <small>اضغط في أي مكان للتخطي</small>
+    </div>
+    <script>
+      (function () {
+        var MIN = 3200, t0 = Date.now(), done = false;
+        function hide() {
+          if (done) return;
+          done = true;
+          var s = document.getElementById('splash');
+          if (!s) return;
+          s.classList.add('hide');
+          setTimeout(function () {
+            if (s.parentNode) s.parentNode.removeChild(s);
+          }, 700);
+        }
+        var sp = document.getElementById('splash');
+        ['click', 'touchstart'].forEach(function (ev) {
+          sp.addEventListener(ev, hide, { passive: true });
+        });
+        window.addEventListener('load', function () {
+          setTimeout(hide, Math.max(0, MIN - (Date.now() - t0)));
+        });
+        setTimeout(hide, 4500);
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
